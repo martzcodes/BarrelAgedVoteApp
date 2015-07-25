@@ -1,12 +1,11 @@
 'use strict';
 
 angular.module('angularPassportApp')
-    .factory('Vote', function ($resource) {
+    .factory('Beer', function ($resource) {
         return {
-            getVotes: $resource('/auth/beers'),
-            resetVotes: $resource('/auth/beers/reset'),
-            addVotes: $resource('/auth/beers/add/'),
-            updateVote: $resource('/auth/beers/update/'),
-            removeVote: $resource('/auth/beers/remove/:beerId/')
+            getBeers: $resource('/auth/beers'),
+            addBeer: $resource('/auth/beers/add/'),
+            updateBeer: $resource('/auth/beers/update/'),
+            removeBeer: $resource('/auth/beers/remove/:beerId/')
         };
     });
