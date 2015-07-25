@@ -1,0 +1,20 @@
+{
+  "name": "barrel-aged-vote-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "async": "^1.2.1",
+    "connect-mongo": "^0.8.1",
+    "ejs": "~0.8.4",
+    "express": "~3.4.3",
+    "mongoose": "4.0.2",
+    "passport": "~0.1.15",
+    "passport-local": "~0.1.6",
+    "promise": "^7.0.1",
+    "request": "^2.57.0",
+    "underscore": "^1.7.0"
+  }
+}
