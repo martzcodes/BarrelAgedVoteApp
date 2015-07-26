@@ -48,13 +48,23 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 
 // express/mongo session storage
-app.use(express.session({
-    secret: 'MEAN',
-    store: new mongoStore({
-        url: 'mongodb://'+config.db+':27017'+config.dbname,
-        collection: 'sessions'
-    })
-}));
+if (config.dbuser !== '') {
+    app.use(express.session({
+        secret: 'MEAN',
+        store: new mongoStore({
+            url: 'mongodb://' + config.dbuser + ':' + config.dbpass + '@' + config.db + ':' + config.dbport + config.dbname,
+            collection: 'sessions'
+        })
+    }));
+} else {
+    app.use(express.session({
+        secret: 'MEAN',
+        store: new mongoStore({
+            url: 'mongodb://' + config.db + ':' + config.dbport + config.dbname,
+            collection: 'sessions'
+        })
+    }));
+}
 
 // use passport session
 app.use(passport.initialize());
