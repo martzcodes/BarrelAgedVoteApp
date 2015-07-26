@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
     .controller('MainCtrl', function ($scope, Vote, Beer) {
 
         function shuffle(array) {

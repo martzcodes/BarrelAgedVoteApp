@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
   .factory('Session', function ($resource) {
     return $resource('/auth/session/');
   });

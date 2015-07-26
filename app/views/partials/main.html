@@ -1,58 +1,83 @@
-<div class="col-sm-12 landing-panel">
-    <div class="row main-body">
-        <div class="col-xs-10 col-sm-offset-1">
-            <div class="panel panel-default landing-login">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Welcome!</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="alert" ng-class="main.alert.class" ng-if="main.alert.title !== ''" role="alert">{{main.alert.title}}</div>
-                    <form>
-                        <div class="form-group">
-                            <label for="codeEntry">Code</label>
-                            <input type="text" class="form-control" id="codeEntry" ng-change="codeLengthCheck()" ng-model="main.code" placeholder="6 Character Code">
-                        </div>
-                    </form>
-                    <div class="row">
-                        <h3>How many points do you want to assign? (more points = better)</h3>
+<div class="container-fluid">
+    <div class="col-xs-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Welcome!</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>Welcome to Boundary Stone's Annual Barrel Aged Beer Competition</h3>
                     </div>
-                    <hr/>
-                    <div ng-repeat="(beerIndex, beer) in main.beers | orderBy:'-points'">
-                        <div class="row">
-                            <div class="col-xs-9">
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <h2>{{beer.name}}</h2>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12">
-                                        <h3>{{beer.brewery}}</h3>
-                                    </div>
+                </div>
+                <div class="alert" ng-class="main.alert.class" ng-if="main.alert.title !== ''" role="alert">
+                    {{main.alert.title}}
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="codeEntry">Code</label>
+                        <input type="text" class="form-control" id="codeEntry" ng-change="codeLengthCheck()"
+                               ng-model="main.code" placeholder="6 Character Code">
+                    </div>
+                </form>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="howmany">How many points do you want to assign? (more points = better)</h3>
+                    </div>
+                </div>
+                <hr/>
+                <div ng-repeat="(beerIndex, beer) in main.beers | orderBy:'-points'">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3>{{beer.name}}</h3>
                                 </div>
                             </div>
-                            <div class="col-xs-3">
-                                <div class="row">
-                                    <button class="btn btn-default col-xs-4" ng-disabled="beer.points===1" ng-click="downBeer(beer.points)">D</button>
-                                    <span class="col-xs-4">{{beer.points}}</span>
-                                    <button class="btn btn-default col-xs-4" ng-disabled="beer.points===main.beers.length+1" ng-click="upBeer(beer.points)">U</button>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h3 class="howmany">{{beer.brewery}}</h3>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <p>{{beer.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <button class="btn btn-default btn-block col-xs-12"
+                                        ng-disabled="beer.points===main.beers.length"
+                                        ng-click="upBeer(beer.points)"><i class="fa fa-arrow-up"></i>
+                                </button>
+                            </div>
+                            <div class="row col-xs-12">
+                                <h3>{{beer.points}}</h3>
+                            </div>
+                            <div class="row">
+                                <button class="btn btn-default btn-block col-xs-12" ng-disabled="beer.points===1"
+                                        ng-click="downBeer(beer.points)"><i class="fa fa-arrow-down"></i>
+                                </button>
+                            </div>
+                        </div>
 
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <hr/>
-                            </div>
-                        </div>
                     </div>
                     <div class="row">
                         <div class="col-xs-12">
-                            <button class="btn btn-success btn-full" ng-disabled="main.disableSubmit" ng-click="submitVote()">Submit Vote</button>
+                            <hr/>
                         </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button class="btn btn-success btn-block" ng-disabled="main.disableSubmit"
+                                ng-click="submitVote()">Submit Vote
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>

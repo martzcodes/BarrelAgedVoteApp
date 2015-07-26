@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
     .factory('Beer', function ($resource) {
         return {
             getBeers: $resource('/auth/beers'),

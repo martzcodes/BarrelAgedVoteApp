@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
     .controller('AdminCtrl', function ($scope, Auth, Vote, Beer, $location, $rootScope) {
         $scope.error = {};
         $scope.user = {};

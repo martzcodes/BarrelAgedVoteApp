@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
   .factory('User', function ($resource) {
     return $resource('/auth/users/:id/', {},
       {

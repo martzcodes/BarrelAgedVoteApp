@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
     .factory('Vote', function ($resource) {
         return {
             getVotes: $resource('/auth/votes'),

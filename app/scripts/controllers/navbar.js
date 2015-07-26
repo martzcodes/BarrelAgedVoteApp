@@ -1,11 +1,13 @@
 'use strict';
 
-angular.module('angularPassportApp')
+angular.module('barrelAgedApp')
   .controller('NavbarCtrl', function ($scope, Auth, $location) {
-    $scope.menu = [{
-      title: 'About',
-      link: 'about'
-    }];
+    $scope.menu = [
+/*      {
+        title: 'About',
+        link: 'about'
+      }*/
+    ];
 
     $scope.authMenu = [];
 
