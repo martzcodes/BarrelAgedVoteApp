@@ -22,10 +22,10 @@ angular.module('barrelAgedApp', [
                 templateUrl: 'partials/main.html',
                 controller: 'MainCtrl'
             })
-/*            .when('/signup', {
+            .when('/signup', {
                 templateUrl: 'partials/signup.html',
                 controller: 'SignupCtrl'
-            }) */
+            })
             .otherwise({
                 redirectTo: '/'
             });

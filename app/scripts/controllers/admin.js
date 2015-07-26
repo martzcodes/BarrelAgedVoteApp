@@ -180,7 +180,7 @@ angular.module('barrelAgedApp')
                         updateBeers(function() {
                             updateVotes();
                         });
-                        $location.path('/');
+                        $location.path('/admin');
                     } else {
                         angular.forEach(err.errors, function (error, field) {
                             form[field].$setValidity('mongoose', false);
