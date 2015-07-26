@@ -68,6 +68,15 @@
                                 <input class="col-xs-5 col-xs-offset-2" ng-model="admin.numberVotes" placeholder="# Codes to Add">
                             </div>
                             <br />
+                            <form>
+                                <div class="form-group">
+                                    <label for="codeImport">Import Codes (optional, delimited by command and space)</label>
+                                    <textarea class="form-control" id="codeImport" ng-model="admin.importList" rows="3"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-warning pull-right" ng-click="importCodes()">Import</button>
+                            </form>
+                            <br />
                             <table class="table table-striped table-bordered">
                                 <thead>
                                 <tr>

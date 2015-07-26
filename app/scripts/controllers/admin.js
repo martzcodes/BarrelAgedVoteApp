@@ -52,6 +52,12 @@ angular.module('angularPassportApp')
             });
         };
 
+        $scope.importCodes = function() {
+            Vote.importVotes.get({codes: $scope.admin.importList},function() {
+                updateVotes();
+            });
+        };
+
         $scope.deleteVote = function(voteId) {
             console.log("trying to remove a code: "+voteId);
             Vote.removeVote.get({voteId:voteId},function(){
@@ -74,6 +80,7 @@ angular.module('angularPassportApp')
 
         $scope.addBeer = function() {
             console.log("trying to add beer: ", $scope.admin.editBeer);
+            delete $scope.admin.editBeer._id;
             Beer.addBeer.save({beer:$scope.admin.editBeer},function(){
                 console.log("added beer");
                 updateBeers();
